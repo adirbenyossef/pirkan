@@ -29,7 +29,7 @@ class TestablePirkan extends pirkan_1.default {
         // Create an instance of TestablePirkan with single key
         pirkanInstance = new TestablePirkan({
             items,
-            withIndexedLookup: { byKeyName: "id" }
+            byKeyName: "id"
         });
     });
     (0, globals_1.describe)("Constructor", () => {
@@ -61,7 +61,8 @@ class TestablePirkan extends pirkan_1.default {
                     { id: 1, name: "John", age: 15 },
                     { id: 2, name: "Jane", age: 12 }
                 ],
-                withIndexedLookup: { byKeyName: "id", byDualKeyName: ["id", "name"] }
+                byKeyName: "id",
+                byDualKeyName: ["id", "name"]
             });
         });
         (0, globals_1.it)("should find items by id and name", () => {
@@ -79,9 +80,7 @@ class TestablePirkan extends pirkan_1.default {
         ];
         const pirkanInstance = new pirkan_1.default({
             items: originalItems,
-            withIndexedLookup: {
-                byKeyName: 'id',
-            }
+            byKeyName: 'id'
         });
         (0, globals_1.it)('should transform keys using Transform class', () => {
             const keyMapping = { id: 'userId', name: 'userName' };
@@ -94,9 +93,7 @@ class TestablePirkan extends pirkan_1.default {
         (0, globals_1.it)('should handle empty input array in transformKeys', () => {
             const emptyPirkanInstance = new pirkan_1.default({
                 items: [],
-                withIndexedLookup: {
-                    byKeyName: 'id',
-                },
+                byKeyName: 'id'
             });
             const keyMapping = { id: 'userId', name: 'userName' };
             // @ts-expect-error

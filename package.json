@@ -1,15 +1,13 @@
 {
   "name": "pirkan",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": ["module", "pirkan", "object", "transform", "factory", "index"],
+  "author": "Adir",
+  "description": "Basic Day To Day Implementation",
   "devDependencies": {
     "@types/jest": "^29.5.13",
     "jest": "^29.7.0",

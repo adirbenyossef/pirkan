@@ -3,10 +3,8 @@ import Transform from "./transform/transform";
 
 type PirkanInit<T> = {
   items: T[];
-  withIndexedLookup: {
-    byKeyName: keyof T | 'id';
-    byDualKeyName?: [keyof T, keyof T];
-  };
+  byKeyName: keyof T | 'id';
+  byDualKeyName?: [keyof T, keyof T];
 }
 
 class Pirkan<T> extends MethodGenerator<T> {
@@ -14,7 +12,8 @@ class Pirkan<T> extends MethodGenerator<T> {
 
   constructor({
     items,
-    withIndexedLookup: { byKeyName = 'id', byDualKeyName }
+    byKeyName = 'id', 
+    byDualKeyName 
   }: PirkanInit<T>) {
     super(byKeyName, byDualKeyName);
     this.items = items;

@@ -7,7 +7,7 @@ const method_generator_1 = __importDefault(require("./method-generator/method-ge
 const transform_1 = __importDefault(require("./transform/transform"));
 class Pirkan extends method_generator_1.default {
     items;
-    constructor({ items, withIndexedLookup: { byKeyName = 'id', byDualKeyName } }) {
+    constructor({ items, byKeyName = 'id', byDualKeyName }) {
         super(byKeyName, byDualKeyName);
         this.items = items;
         this.generateMethods(this); // Pass the current instance

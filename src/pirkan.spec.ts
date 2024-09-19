@@ -37,7 +37,7 @@ describe("Pirkan", () => {
     // Create an instance of TestablePirkan with single key
     pirkanInstance = new TestablePirkan<Person>({
       items,
-      withIndexedLookup: { byKeyName: "id" }
+       byKeyName: "id" 
     });
   });
 
@@ -74,7 +74,8 @@ describe("Pirkan", () => {
           { id: 1, name: "John", age: 15 },
           { id: 2, name: "Jane", age: 12 }
         ],
-        withIndexedLookup: { byKeyName: "id", byDualKeyName: ["id", "name"] }
+         byKeyName: "id", 
+         byDualKeyName: ["id", "name"]
       });
     });
 
@@ -95,9 +96,7 @@ describe("Pirkan", () => {
     
       const pirkanInstance = new Pirkan({
         items: originalItems,
-        withIndexedLookup: {
-          byKeyName: 'id',
-        }
+        byKeyName: 'id'
     });
     
     it('should transform keys using Transform class', () => {
@@ -113,10 +112,8 @@ describe("Pirkan", () => {
       it('should handle empty input array in transformKeys', () => {
         const emptyPirkanInstance = new Pirkan({
           items: [],
-          withIndexedLookup: {
-            byKeyName: 'id',
-          },
-        });
+          byKeyName: 'id'
+      });
         const keyMapping = { id: 'userId', name: 'userName' };
         // @ts-expect-error
         const transformedItems = emptyPirkanInstance.transformKeys(keyMapping);
